@@ -1,0 +1,93 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+{% block custom_css %}
+{% endblock custom_css %}
+
+{% block page_content %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elements = document.querySelectorAll('.time-remaining');
+
+        elements.forEach(function(element) {
+            var bookingDateString = element.getAttribute('data-booking-date');
+            // Convert the date string from "May 2, 2024, 11:35 p.m." to a format that JavaScript can parse
+            // Adjust the parsing logic if the format is different
+            var dateParts = bookingDateString.split(', ');
+            var timeParts = dateParts[2].split(' ');
+            var amPm = timeParts[1];
+            var time = timeParts[0].split(':');
+            var hours = parseInt(time[0], 10);
+            var minutes = parseInt(time[1], 10);
+
+            // Convert 12-hour clock to 24-hour clock if necessary
+            if (amPm === 'p.m.' && hours < 12) {
+                hours += 12;
+            } else if (amPm === 'a.m.' && hours === 12) {
+                hours = 0;
+            }
+
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var month = months.indexOf(dateParts[0].split(' ')[0]);
+            var day = parseInt(dateParts[0].split(' ')[1], 10);
+            var year = parseInt(dateParts[1], 10);
+
+            var bookingDate = new Date(year, month, day, hours, minutes);
+            var now = new Date();
+            var timeRemaining = bookingDate - now;
+
+            if (timeRemaining > 0) {
+                var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                element.textContent = days + "d " + hours + "h " + minutes + "m ";
+            } else {
+                element.textContent = 'Expired';
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+    <main class="main">
+        <div class="page-header text-center" style="background-image: url('path_to_your_image.jpg');">
+            <div class="container">
+                <h1 class="page-title">Booked Services<span>Details</span></h1>
+            </div><!-- End .container -->
+        </div><!-- End .page-header -->
+        <div class="page-content">
+            <div class="container">
+                <table class="table table-cart table-mobile">
+                    <thead>
+                        <tr>
+                            <th>Service Name</th>
+                            <th>Booking Date</th>
+                            <th>Time Remaining</th>
+                            <th>Additional Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for booking in bookings %}
+                        <tr>
+                            <td class="service-name">{{ booking.service.service_name }}</td>
+                            <td class="booking-date">{{ booking.booking_date }}</td>
+                            <td class="time-remaining" data-booking-date="{{ booking.booking_date }}"></td>
+                            <td class="additional-details">{{ booking.additional_details }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+{% endblock page_content %}
+
+
+{% block custom_js %}
+{% endblock custom_js %}

@@ -1,0 +1,287 @@
+@import url('http://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+/* Style the header container */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px ;
+    background-color: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  
+  }
+  /* Style the logo */
+  .logo {
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold;
+  }
+  
+  /* Style the main navigation menu */
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the navigation links */
+  .nav-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333; /* Adjust color as needed */
+  }
+  /* Style the top and middle header sections */
+  .header-top,
+  .header-middle {
+    display: flex; /* Arrange elements horizontally */
+    justify-content:flex-end; /* Evenly distribute elements */
+  
+    
+  }
+  
+  /* Style the header left section */
+  .header-left {
+    display: flex; /* Arrange elements side-by-side */
+    align-items: center; /* Vertically center elements */
+  }
+  
+  /* Style the main navigation menu */
+  .header-left .main-nav {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Arrange items horizontally */
+  }
+  
+  /* Style the top level navigation links */
+  .header-left .main-nav ul li {
+    display: inline-block; /* Arrange links horizontally */
+    margin-right: 20px; /* Add margin between links */
+  }
+  
+  /* Style the top level navigation links on hover */
+  .header-left .main-nav ul li a:hover {
+    color: #000; /* Change link color on hover */
+    
+  }
+  
+  /* Style the search area */
+  .header-right .header-search {
+    margin-left: 20px; /* Add margin to the left of search */
+  }
+  
+  /* Style the search input field */
+  .header-right .header-search input[type="text"] {
+    border: 1px solid #ccc; /* Add border to input field */
+    padding: 5px; /* Add padding to input field */
+  }
+  
+  /* Style the search button */
+  .header-right .header-search button {
+    background-color: #000; /* Set button background color */
+    color: #fff; /* Set button text color */
+    border: none; /* Remove button border */
+    padding: 5px 10px; /* Add padding to button */
+    cursor: pointer; /* Set cursor to pointer on hover */
+  }
+  /* Style the dropdown container */
+  .megamenu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    display: none;
+    z-index: 999;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Show the dropdown on hover */
+  .menu-item:hover .megamenu {
+    display: block;
+  }
+  
+  /* Style the dropdown columns */
+  .menu-col {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Style the menu titles */
+  .menu-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the dropdown links */
+  .megamenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .megamenu ul li {
+    margin-bottom: 10px;
+  }
+  
+  .megamenu ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .megamenu ul li a:hover {
+    color: #000;
+  }
+  
+  /* Style the container inside the header */
+  .container {
+    max-width: 1200px; /* Adjust this value based on your design */
+    margin: 0 auto;
+  }
+  /* Style the product image */
+  .product-title img {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+  }
+  .product-image {
+    width: 200px; /* Set the width of the product image */
+  }
+  
+  .product-image-hover {
+    width: 200px; /* Set the width of the product image */
+    height: auto; /* Allow the height to adjust automatically */
+  }
+  
+  .product-media {
+    position: relative; /* Position the product media container */
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .product-media img {
+    transition: transform 0.5s ease; /* Add smooth transition for hover effect */
+  }
+  
+  .product-media:hover img {
+    transform: scale(1.1); /* Scale up the image on hover */
+  }
+  .product-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9;
+    padding: 0 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #333333;
+  }
+  
+  
+  /* Style the footer */
+  footer {
+    background-color: #2e3338;
+    padding: 30px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  
+  .footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+    color: #fff;
+  }
+  
+  .footer p, .footer a {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    color: #fff;
+  }
+  
+  .footer a {
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .footer a:hover {
+    color: #1a1a1a;
+  }
+  
+  .footer .email {
+    background-color: transparent;
+    padding: 7px 12px;
+    border: 1px solid #fff;
+    color: white;
+    margin-bottom: 15px;
+    outline: none;
+  }
+  
+  .footer .email::placeholder {
+    color: #ffffff;
+  }
+  
+  .footer a button {
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #1d3a58;
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: all linear 0.2s;
+  }
+  
+  .footer a button:hover {
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .copyright {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  
+  .footer .email {
+    background-color: transparent;
+    padding: 7px 12px;
+    border: 1px solid #fff;
+    color: white;
+    margin-bottom: 15px;
+    outline: none;
+  }
+  
+  .footer .email::placeholder {
+    color: #ffffff;
+  }
+  
+  .footer a button {
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #1d3a58;
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: all linear 0.2s;
+  }
+  
+  .footer a button:hover {
+    background-color: transparent;
+    color: #fff;
+  }
+  

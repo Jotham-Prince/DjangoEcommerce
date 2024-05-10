@@ -1,0 +1,397 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+
+{% block page_content %}
+<main class="main">
+            <div class="intro-section bg-lighter pt-5 pb-6">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="intro-slider-container slider-container-ratio slider-container-1 mb-2 mb-lg-0">
+                                <div class="intro-slider intro-slider-1 owl-carousel owl-simple owl-light owl-nav-inside" data-toggle="owl" data-owl-options='{"nav": false, "responsive": {"768": {"nav": true }}}'>
+                                    {% for category in categories_list %}
+                                    <div class="intro-slide">
+                                        <figure class="slide-image">
+                                            <img src="{{ category.thumbnail.url }}" alt="{{ category.title }}">
+                                        </figure>                        
+                                        <div class="intro-content">
+                                            <h3 class="intro-subtitle">{{ category.title }}</h3>
+                                            <h1 class="intro-title">{{ category.description }}</h1>
+                                            <a href="#" class="btn btn-outline-white">
+                                                <span>SHOP NOW</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <span class="slider-loader"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="intro-banners">
+                                <div class="row row-sm">
+                                    <div class="col-md-6 col-lg-12">
+                                        <div class="banner banner-display">
+                                            <a href="#">
+                                                <img src="{% static 'assets/images/banners/home/intro/banner-1.jpg' %}" alt="Banner">
+                                            </a>
+
+                                            <div class="banner-content">
+                                                <h4 class="banner-subtitle text-darkwhite"><a href="#">Clearence</a></h4><!-- End .banner-subtitle -->
+                                                <h3 class="banner-title text-white"><a href="#">Chairs & Chaises <br>Up to 40% off</a></h3><!-- End .banner-title -->
+                                                <a href="#" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                                            </div><!-- End .banner-content -->
+                                        </div><!-- End .banner -->
+                                    </div><!-- End .col-md-6 col-lg-12 -->
+
+                                    <div class="col-md-6 col-lg-12">
+                                        <div class="banner banner-display mb-0">
+                                            <a href="#">
+                                                <img src="{% static 'assets/images/banners/home/intro/banner-2.jpg' %}" alt="Banner">
+                                            </a>
+
+                                            <div class="banner-content">
+                                                <h4 class="banner-subtitle text-darkwhite"><a href="#">New in</a></h4><!-- End .banner-subtitle -->
+                                                <h3 class="banner-title text-white"><a href="#">Best Lighting <br>Collection</a></h3><!-- End .banner-title -->
+                                                <a href="#" class="btn btn-outline-white banner-link">Discover Now<i class="icon-long-arrow-right"></i></a>
+                                            </div><!-- End .banner-content -->
+                                        </div><!-- End .banner -->
+                                    </div><!-- End .col-md-6 col-lg-12 -->
+                                </div><!-- End .row row-sm -->
+                            </div><!-- End .intro-banners -->
+                        </div>
+                    </div>
+                        
+
+                    <div class="mb-6"></div><!-- End .mb-6 -->
+
+                    <div class="owl-carousel owl-simple" data-toggle="owl" 
+                        data-owl-options='{
+                            "nav": false, 
+                            "dots": false,
+                            "margin": 30,
+                            "loop": false,
+                            "responsive": {
+                                "0": {
+                                    "items":2
+                                },
+                                "420": {
+                                    "items":3
+                                },
+                                "600": {
+                                    "items":4
+                                },
+                                "900": {
+                                    "items":5
+                                },
+                                "1024": {
+                                    "items":6
+                                }
+                            }
+                        }'>
+                        <a href="#" class="brand">
+                            <img src="{% static 'assets/images/brands/1.png' %}" alt="Brand Name">
+                        </a>
+
+                        <a href="#" class="brand">
+                            <img src="{% static 'assets/images/brands/2.png' %}" alt="Brand Name">
+                        </a>
+                        
+                        <a href="#" class="brand">
+                            <img src="{% static 'assets/images/brands/3.png' %}" alt="Brand Name">
+                        </a>
+                        
+                        <a href="#" class="brand">
+                            <img src="{% static 'assets/images/brands/4.png' %}" alt="Brand Name">
+                        </a>
+                        <a href="#" class="brand">
+                            <img src="{% static 'assets/images/brands/5.png' %}" alt="Brand Name">
+                        </a>
+                        
+                        <a href="#" class="brand">
+                            <img src="{% static 'assets/images/brands/6.png' %}" alt="Brand Name">
+                        </a>                        
+                    </div><!-- End .owl-carousel -->
+                </div><!-- End .container -->
+            </div><!-- End .bg-lighter -->
+
+            <div class="mb-6"></div><!-- End .mb-6 -->
+
+            <div class="container">
+                <div class="heading heading-center mb-3">
+                    <h2 class="title-lg">Trendy Products</h2><!-- End .title -->
+
+                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="trendy-all-link" data-toggle="tab" href="#trendy-all-tab" role="tab" aria-controls="trendy-all-tab" aria-selected="true">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="trendy-fur-link" data-toggle="tab" href="#trendy-fur-tab" role="tab" aria-controls="trendy-fur-tab" aria-selected="false">Furniture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="trendy-decor-link" data-toggle="tab" href="#trendy-decor-tab" role="tab" aria-controls="trendy-decor-tab" aria-selected="false">Decor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="trendy-light-link" data-toggle="tab" href="#trendy-light-tab" role="tab" aria-controls="trendy-light-tab" aria-selected="true">Lighting</a>
+                        </li>
+                    </ul>
+                </div><!-- End .heading -->
+
+                
+                <div class="tab-pane p-0 fade show active" role="tabpanel">
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
+                        data-owl-options='{
+                            "nav": true, 
+                            "dots": true,
+                            "margin": 20,
+                            "loop": false,
+                            "responsive": {
+                                "0": {
+                                    "items":2
+                                },
+                                "480": {
+                                    "items":2
+                                },
+                                "768": {
+                                    "items":3
+                                },
+                                "992": {
+                                    "items":4
+                                },
+                                "1200": {
+                                    "items":4,
+                                    "nav": true,
+                                    "dots": false
+                                }
+                            }
+                        }'>
+                        {% for service in service_list %}
+                            <div class="product product-11 text-center">
+                                <figure class="product-media">
+                                    {% if service.media %}
+                                        <a href="{% url 'service_detail' pk=service.service.id %}">
+                                            <img src="{{ MEDIA_URL }}{{ service.media.media_content }}" alt="{{ service.service.service_name }}" class="product-image">
+                                        </a>
+                                    {% endif %}
+                                </figure>
+                                <div class="product-body">
+                                    <h3 class="product-title">
+                                        <a href="{% url 'service_detail' pk=service.service.id %}">{{ service.service.service_name }}</a>
+                                    </h3>
+                                    <div class="product-price">
+                                        <span class="new-price">{{ service.service.price }}</span>
+                                        <!-- Placeholder for old price, calculate in JavaScript -->
+                                        <span class="old-price">Price <span class="price-value" data-price="{{ service.service.price }}"></span></span>
+                                    </div>
+                                    <div class="product-nav product-nav-dots">
+                                        <span>Duration:{{ service.service.duration }}</span>
+                                    </div>
+                                </div>
+                                <div class="product-action">
+                                    <a href="{% url 'create_booking' service_id=service.service.id %}" class="btn-product btn-cart">
+                                        <span>BOOK SERVICE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}  
+                    </div><!-- .End .tab-pane -->
+                </div><!-- End .tab-content -->
+                
+            </div><!-- End .container -->
+
+    		<div class="container categories pt-6">
+        		<h2 class="title-lg text-center mb-4">Shop by Categories</h2><!-- End .title-lg text-center -->
+
+        		<div class="row">
+        			<div class="col-6 col-lg-4">
+        				<div class="banner banner-display banner-link-anim">
+                			<a href="#">
+                                <img src="{% static 'assets/images/banners/home/banner-1.jpg' %}" alt="Banner">
+                            </a>                            
+                			<div class="banner-content banner-content-center">
+                				<h3 class="banner-title text-white"><a href="#">Outdoor</a></h3><!-- End .banner-title -->
+                				<a href="#" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                			</div><!-- End .banner-content -->
+            			</div><!-- End .banner -->
+        			</div><!-- End .col-sm-6 col-lg-3 -->
+        			<div class="col-6 col-lg-4 order-lg-last">
+        				<div class="banner banner-display banner-link-anim">
+                			<a href="#">
+                				<img src="{% static 'assets/images/banners/home/banner-4.jpg' %}" alt="Banner">
+                			</a>
+
+                			<div class="banner-content banner-content-center">
+                				<h3 class="banner-title text-white"><a href="#">Lighting</a></h3><!-- End .banner-title -->
+                				<a href="#" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                			</div><!-- End .banner-content -->
+            			</div><!-- End .banner -->
+        			</div><!-- End .col-sm-6 col-lg-3 -->
+        			<div class="col-sm-12 col-lg-4 banners-sm">
+                        <div class="row">
+            				<div class="banner banner-display banner-link-anim col-lg-12 col-6">
+                    			<a href="#">
+                    				<img src="{% static 'assets/images/banners/home/banner-2.jpg' %}" alt="Banner">
+                    			</a>
+
+                    			<div class="banner-content banner-content-center">
+                    				<h3 class="banner-title text-white"><a href="#">Furniture and Design</a></h3><!-- End .banner-title -->
+                    				<a href="#" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                    			</div><!-- End .banner-content -->
+                			</div><!-- End .banner -->
+
+                			<div class="banner banner-display banner-link-anim col-lg-12 col-6">
+                    			<a href="#">
+                    				<img src="{% static 'assets/images/banners/home/banner-3.jpg' %}" alt="Banner">
+                    			</a>
+
+                    			<div class="banner-content banner-content-center">
+                    				<h3 class="banner-title text-white"><a href="#">Kitchen & Utensil</a></h3><!-- End .banner-title -->
+                    				<a href="#" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                    			</div><!-- End .banner-content -->
+                			</div><!-- End .banner -->
+                        </div>
+        			</div><!-- End .col-sm-6 col-lg-3 -->
+        		</div><!-- End .row -->
+    		</div><!-- End .container -->
+
+            <div class="mb-5"></div><!-- End .mb-6 -->
+
+            
+            <div class="container">
+                <div class="heading heading-center mb-6">
+                    <h2 class="title">Recent Arrivals</h2><!-- End .title -->
+
+                    <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="top-all-link" data-toggle="tab" href="#top-all-tab" role="tab" aria-controls="top-all-tab" aria-selected="true">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="top-fur-link" data-toggle="tab" href="#top-fur-tab" role="tab" aria-controls="top-fur-tab" aria-selected="false">Furniture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="top-decor-link" data-toggle="tab" href="#top-decor-tab" role="tab" aria-controls="top-decor-tab" aria-selected="false">Decor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="top-light-link" data-toggle="tab" href="#top-light-tab" role="tab" aria-controls="top-light-tab" aria-selected="false">Lighting</a>
+                        </li>
+                    </ul>
+                </div><!-- End .heading -->
+
+                <div class="tab-content">
+                    <div class="tab-pane p-0 fade show active" id="top-all-tab" role="tabpanel" aria-labelledby="top-all-link">
+                        <div class="products">
+                            <div class="row justify-content-center">
+                                {% for product in product_list %}
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="product product-11 mt-v3 text-center">
+                                        <figure class="product-media">
+                                            <a href="{% url 'product_detail' product.product.id %}">
+                                                <img src="{{ product.media.media_content }}" alt="Product image" class="product-image">
+                                            </a>
+                        
+                                            <div class="product-action-vertical">
+                                                <a href="#" class="btn-product-icon btn-wishlist"><span>Add to wishlist</span></a>
+                                            </div><!-- End .product-action-vertical -->
+                                        </figure><!-- End .product-media -->
+                        
+                                        <div class="product-body">
+                                            <h3 class="product-title"><a href="#">{{ product.product.product_name }}</a></h3><!-- End .product-title -->
+                                            <div class="product-price">
+                                                ${{ product.product.product_max_price }}
+                                            </div><!-- End .product-price -->
+                        
+                                            <div class="product-nav product-nav-dots">
+                                                <!-- Add any additional product information or features here -->
+                                                <a href="#" class="active" style="background: #e8e8e8;"><span class="sr-only">Color name</span></a>
+                                                <a href="#" style="background: #333333;"><span class="sr-only">Color name</span></a>
+                                            </div><!-- End .product-nav -->
+                                        </div><!-- End .product-body -->
+                        
+                                        <div class="product-action">
+                                            <form method="post" action="{% url 'add_to_cart' product.product.id %}">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="quantity" value="1">  <!-- Default quantity, can be modified by the user -->
+                                                <button type="submit" class="btn-product btn-cart"><span>  Add to cart    </span></button>
+                                            </form>
+                                        </div><!-- End .product-action -->
+                                    </div><!-- End .product -->
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>                        
+                        
+                    </div><!-- .End .tab-pane -->
+                </div><!-- End .tab-content -->
+                <div class="more-container text-center">
+                    <a href="#" class="btn btn-outline-darker btn-more"><span>Load more products</span><i class="icon-long-arrow-down"></i></a>
+                </div><!-- End .more-container -->
+            </div><!-- End .container -->
+
+            <div class="container">
+                <hr>
+            	<div class="row justify-content-center">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="icon-box icon-box-card text-center">
+                            <span class="icon-box-icon">
+                                <i class="icon-rocket"></i>
+                            </span>
+                            <div class="icon-box-content">
+                                <h3 class="icon-box-title">Payment & Delivery</h3><!-- End .icon-box-title -->
+                                <p>Free shipping for orders over UGX 5,000,000</p>
+                            </div><!-- End .icon-box-content -->
+                        </div><!-- End .icon-box -->
+                    </div><!-- End .col-lg-4 col-sm-6 -->
+
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="icon-box icon-box-card text-center">
+                            <span class="icon-box-icon">
+                                <i class="icon-rotate-left"></i>
+                            </span>
+                            <div class="icon-box-content">
+                                <h3 class="icon-box-title">Return & Refund</h3><!-- End .icon-box-title -->
+                                <p>Free 100% money back guarantee</p>
+                            </div><!-- End .icon-box-content -->
+                        </div><!-- End .icon-box -->
+                    </div><!-- End .col-lg-4 col-sm-6 -->
+
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="icon-box icon-box-card text-center">
+                            <span class="icon-box-icon">
+                                <i class="icon-life-ring"></i>
+                            </span>
+                            <div class="icon-box-content">
+                                <h3 class="icon-box-title">Quality Support</h3><!-- End .icon-box-title -->
+                                <p>Alway online feedback 24/7</p>
+                            </div><!-- End .icon-box-content -->
+                        </div><!-- End .icon-box -->
+                    </div><!-- End .col-lg-4 col-sm-6 -->
+                </div><!-- End .row -->
+
+                <div class="mb-2"></div><!-- End .mb-2 -->
+            </div><!-- End .container -->
+            
+           
+        </main><!-- End .main -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    var products = document.querySelectorAll('.product');
+    products.forEach(function(product) {
+        var priceValueElement = product.querySelector('.price-value');
+        if (priceValueElement) {
+            var price = parseFloat(priceValueElement.getAttribute('data-price'));
+            var oldPrice = (price * 1.30).toFixed(2); // Increase by 30%
+            priceValueElement.textContent = 'Was $' + oldPrice;
+        }
+    });
+});
+
+            </script>
+        
+
+{% endblock page_content %}
+
+
+{% block custom_js %}
+
+{% endblock custom_js %}

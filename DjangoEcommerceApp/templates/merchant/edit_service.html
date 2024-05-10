@@ -1,0 +1,50 @@
+{% extends 'merchant/base.html' %}
+<!-- BLOCK FOR TITLE -->
+{% block title %}
+Service List
+{% endblock title %}
+{% block custom_css %}
+
+{% endblock custom_css %}
+
+{% block page_title %}
+Service Edit
+{% endblock page_title %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Service</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Edit Service</h2>
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                <div class="invalid-feedback">
+                    {{ error }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</body>
+</html>
+
+{% endblock page_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}
+

@@ -1,0 +1,120 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+@import url('http://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;900&display=swap');
+
+/* Body styling */
+body {
+    font-family: 'Spartan', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+/* Section padding */
+.section-p1 {
+    padding: 40px 80px;
+}
+
+/* About Us Section */
+.about-container {
+    margin: 0 auto;
+}
+
+.about-container h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+    margin-bottom: 20px;
+    margin-right: 100px;
+}
+.about-image {
+    float: left; /* Float the image to the left */
+    width:550px;
+    height: 350px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+
+}
+.about-container p {
+    font-size: 18px;
+    color: #13201b;
+    margin-bottom: 20px;
+    padding-left: 40%;
+}
+
+.highlight {
+    color: blue; /* Default text color */
+    text-decoration: underline; /* Add underline */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.highlight:hover {
+    font-weight: bold; /* Make text bold on hover */
+}
+
+.highlight:active {
+    font-weight: bold; /* Make text bold when tapped */
+}
+
+
+
+/* Header section styling */
+#header {
+    background-color: #542aeb;
+    padding: 20px 80px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#navbar li {
+    position: relative;
+    padding: 0 20px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+    padding-left: 5px;
+}
+/* Apply styles for the active class */
+#navbar li a.active,
+#navbar li a.active::after {
+    color: #dcecdc;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #c1e0de;
+}
+
+#navbar li a.active::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background:#aebbba;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}

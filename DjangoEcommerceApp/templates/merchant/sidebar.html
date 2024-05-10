@@ -1,0 +1,42 @@
+{% load static %}
+<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <a href="/"><img src="{% static '/img/Logo.png' %}" style="height: 85px;" /></a>
+      </div>
+      <div class="sidebar-brand sidebar-brand-sm">
+        <a href="/"><img src="{% static '/img/Logo.png' %}" style="height: 85px;" /></a>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="menu-header"> Merchant Dashboard</li>
+        
+       {% url 'product_view' as product_view %}
+       {% url 'product_lists' as product_lists %}
+       {% url 'product_edit' product.id as product_edit %}
+       {% url 'product_add_media' product.id as product_add_media %}
+       {% url 'product_edit_media' product.id as product_edit_media %}
+       {% url 'product_add_stocks' product.id as product_add_stocks %}
+        <li class="dropdown {% if request.path == product_view %} active {% endif %}  {% if request.path == product_lists %} active {% endif %} {% if request.path == product_edit %} active {% endif %}{% if request.path == product_add_media %} active {% endif %}{% if request.path == product_edit_media %} active {% endif %}{% if request.path == product_add_stocks %} active {% endif %}">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-dice-d6"></i><span>Products</span></a>
+          <ul class="dropdown-menu">
+            <li class='{% if request.path == product_view %} active {% endif %}'><a class="nav-link" href="{% url 'product_view' %}">Add Products</a></li>
+            <li class='{% if request.path == product_lists %} active {% endif %} {% if request.path == product_edit %} active {% endif %} {% if request.path == product_add_media %} active {% endif %}{% if request.path == product_edit_media %} active {% endif %}{% if request.path == product_add_stocks %} active {% endif %}'><a class="nav-link" href="{% url 'product_lists' %}">Product List</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="sidebar-menu">
+        <li class="dropdown ">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-dice-d6"></i><span>Services</span></a>
+          <ul class="dropdown-menu">
+           <li><a href="{% url 'add_service' %}">Add Service</a></li>
+           <li><a href="{% url 'service_list' %}">Service List</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+        <a href="{% url 'logout_process' %}" class="btn btn-primary btn-lg btn-block btn-icon-split">
+          <i class="fas fa-rocket"></i> LOGOUT
+        </a>
+      </div>        </aside>
+  </div>

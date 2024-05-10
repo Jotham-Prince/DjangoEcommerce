@@ -1,0 +1,268 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+{% block custom_css %}
+<!-- <style>
+
+    body, h1, h2, h3, p, blockquote, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    
+    body {
+        font-family: poppins, sans-serif;
+        line-height: 1.6;
+        background-image: url(images/aboutnew.jpg); 
+        background-size: cover; 
+        background-position: center;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .highlight {
+        color: blue; 
+        text-decoration: underline;
+        cursor: pointer
+    }
+
+    .highlight:hover {
+        font-weight: bold; 
+    }
+
+    .highlight:active {
+        font-weight: bold;
+    }
+
+
+   
+
+    #header {
+        background-color: #fcecca;
+        padding: 20px 80px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        z-index: 999;
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    article {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+   
+    section {
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    section p {
+        margin-bottom: 15px;
+    }
+
+    
+    blockquote {
+        background-color: #fdcfae;
+        border-left: 5px solid #ddd;
+        padding: 10px 20px;
+        margin: 15px 0;
+    }
+
+  
+    footer {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+</style> -->
+{% endblock custom_css %}
+
+{% block page_content %}
+<title>Blog</title>
+<body>
+    <div class="page-header text-center" style="background-image: url({% static 'assets/img/news/img13.jpg' %});">
+
+        <div class="container">
+            <h1 class="page-title">Learn More About Us</h1>
+        </div><!-- End .container -->
+    </div><!-- End .page-header -->
+    <!-- <section id="header">
+        <a href="index.html" class="logo">
+            <img src="{% static 'assets/images/logo.png' %}"  alt="Logo" width="105" height="60">
+        </a>
+    
+
+        <div>
+            <ul id="navbar">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a class="active" href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'cart' %}"><i class="far fa-shopping-cart"></i></a></li>
+            </ul>
+
+        </div>
+    </section>
+    <article>
+
+           </div>
+   </section> -->
+
+   <article>
+
+        <!-- <section id="introduction">
+            <h2>Learn More About Us</h2>
+            
+        </section> -->
+
+        <section id="body">
+            <h2>Main Content</h2>
+            <p>Your ultimate destination for fantastic deals on various products</p>
+            <p>Discover a world of sustainable living with our eco-friendly collection, including fashion,home goods, and lifestyle essentials. 
+                Embrace ethical production and durable designs in clothing while also exploring toxin-free options for home decor,wellness products and more.</p>
+                <p>Shop with purpose , Shop sustainability and style that reflect your values. </p>
+
+            <blockquote>
+                <p>Find durable and stylish pieces that prioritize your health and make a positive difference <a href="index.html" class="highlight">Here</a>.</p>
+            </blockquote>
+
+            
+        </section>
+        <div class="blog-posts pt-7 pb-7" style="background-color: #fafafa;">
+            <div class="container">
+               <h2 class="title-lg text-center mb-3 mb-md-4">Latest Articles</h2><!-- End .title-lg text-center -->
+    
+                <div class="owl-carousel owl-simple carousel-with-shadow" data-toggle="owl" 
+                    data-owl-options='{
+                        "nav": false, 
+                        "dots": true,
+                        "items": 3,
+                        "margin": 20,
+                        "loop": false,
+                        "responsive": {
+                            "0": {
+                                "items":1
+                            },
+                            "600": {
+                                "items":2
+                            },
+                            "992": {
+                                "items":3
+                            }
+                        }
+                    }'>
+                    <article class="entry entry-display">
+                        <figure class="entry-media">
+                            <a href="single.html">
+                                <img src="{% static 'assets\images\blog\comments\new2.jpg' %}" alt="image desc">
+                            </a>
+                        </figure><!-- End .entry-media -->
+    
+                        <div class="entry-body pb-4 text-center">
+                            <div class="entry-meta">
+                                <a href="#">Feb 22, 2024</a>, 0 Comments
+                            </div><!-- End .entry-meta -->
+    
+                            <h3 class="entry-title">
+                                <a href="single.html">Utilize Social Media and Digital Marketing.</a>
+                            </h3><!-- End .entry-title -->
+    
+                            <div class="entry-content">
+                                <p>Create engaging content, run targeted ads, and utilize influencer partnerships to expand your reach and drive sales.<br>Create a Consistent Brand . </p>
+                                <a href="single.html" class="read-more">Read More</a>
+                            </div><!-- End .entry-content -->
+                        </div><!-- End .entry-body -->
+                    </article><!-- End .entry -->
+    
+                    <article class="entry entry-display">
+                        <figure class="entry-media">
+                            <a href="single.html">
+                                <img src="{% static 'assets\images\blog\comments\new..jpg' %}" alt="image desc">
+                            </a>
+                        </figure><!-- End .entry-media -->
+    
+                        <div class="entry-body pb-4 text-center">
+                            <div class="entry-meta">
+                                <a href="#">Jan 20 2024</a>, 0 Comments
+                            </div><!-- End .entry-meta -->
+    
+                            <h3 class="entry-title">
+                                <a href="single.html">Stay Updated with E-Commerce Trends.</a>
+                            </h3><!-- End .entry-title -->
+    
+                            <div class="entry-content">
+                                <p>Keep abreast of the latest e-commerce trends, technologies, and consumer preferences.</p>
+                                <a href="single.html" class="read-more">Read More</a>
+                            </div><!-- End .entry-content -->
+                        </div><!-- End .entry-body -->
+                    </article><!-- End .entry -->
+    
+                    <article class="entry entry-display">
+                        <figure class="entry-media">
+                            <a href="single.html">
+                                <img src="{% static 'assets\images\blog\comments\new3.jpg' %}" alt="image desc">
+                            </a>
+                        </figure><!-- End .entry-media -->
+    
+                        <div class="entry-body pb-4 text-center">
+                            <div class="entry-meta">
+                                <a href="#">Jan 17 2024</a>, 2 Comments
+                            </div><!-- End .entry-meta -->
+    
+                            <h3 class="entry-title">
+                                <a href="single.html">Engage with Your Audience.</a>
+                            </h3><!-- End .entry-title -->
+    
+                            <div class="entry-content">
+                                <p> Foster a sense of community and engagement by responding to comments, messages, and reviews promptly.</p>
+                                <a href="single.html" class="read-more">Read More</a>
+                            </div><!-- End .entry-content -->
+                        </div><!-- End .entry-body -->
+                    </article><!-- End .entry -->
+                </div><!-- End .owl-carousel -->
+            </div><!-- container -->
+
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>Enjoy your shopping experience.</p>
+        </section>
+
+        <!-- <footer>
+            <p>Copyright @ 2024 TUNDA Store. All rights reserved</p>
+            
+        </footer> -->
+    </article>
+    
+
+        <!-- <div class="more-container text-center mb-0 mt-3">
+            <a href="blog.html" class="btn btn-outline-darker btn-more"><span>View more articles</span><i class="icon-long-arrow-right"></i></a>
+        </div> -->
+
+    
+
+</body>
+{% endblock page_content %}
+
+
+{% block custom_js %}
+{% endblock custom_js %}
+
+

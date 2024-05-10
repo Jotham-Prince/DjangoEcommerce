@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+welcome to Tunda
+
+Hello {{ Username }}!
+
+Please comfirm your email by clicking on the following link:
+
+Comfirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+{% endautoescape %}

@@ -1,0 +1,33 @@
+{% extends 'merchant/base.html' %}
+<!-- BLOCK FOR TITLE -->
+{% block title %}
+Service List
+{% endblock title %}
+{% block custom_css %}
+
+{% endblock custom_css %}
+
+{% block page_title %}
+Service List
+{% endblock page_title %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <ul>
+        {% for service in services %}
+        <li><a href="{% url 'edit_service' service.pk %}">{{ service.service_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+{% endblock page_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}

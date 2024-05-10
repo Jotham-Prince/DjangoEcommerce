@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+header {
+    background-color: #343a40; /* Dark gray header background */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em; /* Larger font size for header */
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #007bff; /* Blue color for headings */
+}
+
+.featured-businesses, .categories {
+    margin-bottom: 30px;
+}
+
+.business {
+    background-color: #fff; /* White background for business cards */
+    border: 1px solid #ced4da; /* Light gray border */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.business h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.categories ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.categories li {
+    margin-bottom: 10px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #007bff; /* Blue color for category links */
+}
+
+.categories a:hover {
+    color: #1e2231; /* Change color on hover */
+    font-weight: bold; /* Make text bold on hover */
+}
+
+footer {
+    background-color: #343a40; /* Dark gray footer background */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px; /* Smaller padding */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8em; /* Smaller font size */
+}
+

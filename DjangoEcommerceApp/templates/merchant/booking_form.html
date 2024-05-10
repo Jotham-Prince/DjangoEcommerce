@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add meta tags, title, and CSS styles -->
+    <!-- Example CSS styles -->
+    <style>
+        /* CSS styles */
+    </style>
+</head>
+<body>
+    <!-- Navigation, header, or other common elements -->
+
+    <div class="container">
+        <h1>Book {{ service.service_name }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <button type="submit">Book Service</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer, scripts, or other common elements -->
+</body>
+</html>

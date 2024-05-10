@@ -1,0 +1,124 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+{% block custom_css %}
+{% endblock custom_css %}
+
+{% block page_content %}
+<main class="main">
+    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('{% static 'assets/images/backgrounds/login-bg.jpg' %}')">
+        <div class="container">
+            <div class="form-box">
+                <div class="form-tab">
+                    <ul class="nav nav-pills nav-fill" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab" aria-controls="signin-2" aria-selected="false">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="register-tab-2" data-toggle="tab" href="#register-2" role="tab" aria-controls="register-2" aria-selected="true">Register</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
+                            <form action="{% url 'login_view' %}" method="post">
+                                {% csrf_token %}
+                                {{ login_form.as_p }}
+                                <div class="form-footer">
+                                    <button type="submit" class="btn btn-outline-primary-2">
+                                        <span>LOG IN</span>
+                                        <i class="icon-long-arrow-right"></i>
+                                    </button>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="signin-remember-2">
+                                        <label class="custom-control-label" for="signin-remember-2">Remember Me</label>
+                                    </div>
+                                    <a href="#" class="forgot-link">Forgot Your Password?</a>
+                                </div>
+                            </form>
+                            <!-- Social login buttons -->
+                        </div>
+                        <div class="tab-pane fade show active" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+                            <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="{{ signup_form.username.id_for_label }}">Username</label>
+                                    {{ signup_form.username }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ signup_form.email.id_for_label }}">Email</label>
+                                    {{ signup_form.email }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ signup_form.password1.id_for_label }}">Password</label>
+                                    {{ signup_form.password1 }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ signup_form.password2.id_for_label }}">Confirm Password</label>
+                                    {{ signup_form.password2 }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ signup_form.profile_pic.id_for_label }}">Profile Picture</label>
+                                    {{ signup_form.profile_pic }}
+                                </div>
+                            
+                                <!-- User Type Radio Buttons -->
+                                <div id="user_type">
+                                    {{ signup_form.user_type.label_tag }} {{ signup_form.user_type }}
+                                </div>
+                            
+                                <!-- Additional fields for Merchants, initially hidden -->
+                                <div id="additional_fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="{{ signup_form.company_name.id_for_label }}">Company Name</label>
+                                        {{ signup_form.company_name }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="{{ signup_form.gst_details.id_for_label }}">GST Details</label>
+                                        {{ signup_form.gst_details }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="{{ signup_form.address.id_for_label }}">Address</label>
+                                        {{ signup_form.address }}
+                                    </div>
+                                </div>
+                            
+                                <!-- JavaScript to show/hide additional fields based on user type selection -->
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+            var userTypeRadios = document.querySelectorAll('input[name="user_type"]');
+            var additionalFields = document.getElementById('additional_fields');
+
+            function toggleAdditionalFields() {
+                if (this.value == '2') {  // Value for Merchant
+                    additionalFields.style.display = 'block';
+                } else {
+                    additionalFields.style.display = 'none';
+                }
+            }
+
+            userTypeRadios.forEach(function(radio) {
+                radio.addEventListener('change', toggleAdditionalFields);
+            });
+        });
+                                </script>
+                            
+                                <button type="submit" class="btn btn-outline-primary-2">
+                                    <span>SIGN UP</span>
+                                    <i class="icon-long-arrow-right"></i>
+                                </button>
+                            </form>                            
+                                                      
+                            <!-- Social login buttons -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock page_content %}
+
+
+{% block custom_js %}
+{% endblock custom_js %}

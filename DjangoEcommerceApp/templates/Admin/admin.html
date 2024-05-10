@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restricted Access</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+  }
+  .container {
+    text-align: center;
+  }
+  .message {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .btn {
+    display: inline-block; /* Allows the anchor to be styled like a button */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none; /* Removes underline from links */
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="message">You're not allowed to choose this option</div>
+  <!-- The button is now a clickable link -->
+  <a href="your-link-here" class="btn">Go Back</a>
+</div>
+</body>
+</html>
